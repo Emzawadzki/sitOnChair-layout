@@ -1,4 +1,328 @@
+:root {
+  --color: #24BAA0;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+.container {
+  max-width: 1056px;
+  margin: 0 auto;
+}
+
+.clearfix:after {
+  content:'';
+  display: block;
+  clear: both;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.section-title {
+  font-size:22px;
+  text-transform: uppercase;
+  padding-bottom:20px;
+  position: relative;
+  margin-bottom:45px;
+}
+.section-title:after {
+  content:'';
+  height:7px;
+  width:325px;
+  display: block;
+  position: absolute;
+  bottom:0;
+  left:0;
+  background-color: var(--color);
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+.page-header {
+  height:40px;
+  background: #000;
+  z-index: 100;
+  position: relative;
+}
+.page-header .container {}
+
+.page-logo {
+  display: inline-block;
+}
+.page-logo-link {
+  font-size:14px;
+  color:#fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 40px;
+}
+.page-logo-link span {
+  color : var(--color);
+}
+
+.page-nav {
+  float:right;
+}
+.page-nav-list {}
+.page-nav-list-el {
+  position: relative;
+  display: inline-block;
+}
+.page-nav-list-link {
+  font-size:14px;
+  color:#fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 40px;
+  padding:0 20px;
+}
+
+.page-nav-list-link:hover {
+  color: var(--color);
+}
+
+/* MAIN - BANNER */
+
+.main-banner {
+background: linear-gradient(#fff, #ddd)
+}
+
+.banner {
+height: 500px;
+position: relative;
+}
+
+.banner-prev, .banner-next {
+position: absolute;
+left:0;
+top:0;
+height: 100%;
+width: 100px;
+border: 0;
+background: none;
+font-size: 60px;
+color: var(--color);
+}
+
+.banner-prev:focus, .banner-next:focus {
+  outline: none;
+  }
+
+.banner-next {
+left: auto;
+  right:0;
+}
+
+.banner-slides {
+background: yellow;
+height: 100%;
+margin: 0 100px;
+position: relative;
+}
+
+/* SLIDERY */
+
+.banner-slide {
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+opacity: 0;
+transition: 0.5s all;
+}
+
+.bannse-slide-active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* /SLIDERY */
 
 
 
 
+
+
+
+
+/* MAIN - CONTACT */
+.main-contact {
+  padding: 40px;
+}
+
+.page-nav-sublist {
+  opacity:0;
+  visibility: hidden;
+  transition:0.5s opacity;
+
+  background: #000;
+  position: absolute;
+  min-width:120px;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding:15px;
+}
+.page-nav-list-el:hover .page-nav-sublist {
+  opacity:1;
+  visibility: visible;
+}
+.page-nav-sublist:before {
+  content:'';
+  width:10px;
+  height:10px;
+  background: #000;
+  position: absolute;
+  left:50%;
+  top:0;
+  transform:translate(-50%, -50%) rotate(45deg);
+}
+.page-nav-sublist:after {
+  content:'';
+  position: absolute;
+  left:0;
+  top:-10px;
+  right:0;
+  height:10px;
+  background: transparent;
+}
+.page-nav-sublist-el {
+}
+.page-nav-sublist-link {
+  display: block;
+  text-align: center;
+  color:#fff;
+  text-decoration: none;
+  padding:5px 0;
+  font-size:14px;
+}
+.page-nav-sublist-link:hover {
+  color: var(--color);
+}
+
+
+.form {}
+.form-row {
+  margin-bottom:25px;
+}
+.form-left {
+  width:635px;
+  float:left;
+}
+.form-right {
+  width:345px;
+  float:right;
+}
+.form-addon {
+  height:195px;
+  background: url(../images/red_chair.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  margin-bottom: 35px;
+
+}
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+  padding:15px;
+  font-family: 'Raleway', sans-serif;
+  font-size:33px;
+  font-weight: 200;
+  border:1px solid var(--color);
+  width:100%;
+  transition: 0.4s box-shadow;
+}
+.form textarea {
+  min-height:190px;
+  resize: none;
+}
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form textarea:focus {
+  box-shadow:inset 0 0 0 1px var(--color);
+  outline: none;
+}
+
+.form ::-webkit-input-placeholder {
+  color: #ccc;
+}
+.form ::-moz-placeholder {
+  color: #ccc;
+}
+.form :-ms-input-placeholder {
+  color: #ccc;
+}
+.form :-moz-placeholder {
+  color: #ccc;
+}
+
+.checkbox {
+  display: block;
+position: relative;
+padding-left: 60px;
+min-height: 48px;
+padding-top: 10px;
+color: #aaa;
+font-size: 18px;
+margin-bottom: 35px;
+}
+.checkbox-input {
+  position: absolute;
+  left:-999999px;
+}
+.checkbox-icon {
+  width:48px;
+  height:48px;
+  border: 1px solid var(--color);
+  display: inline-block;
+  position: absolute;
+  left:0;
+  top:0;
+}
+.checkbox-icon:after {
+  content:'';
+  background: url(../images/form_ok.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width:46px;
+  height:46px;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: 0.5s all;
+}
+.checkbox-input:checked + .checkbox-icon:after {
+  opacity:1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn {
+  font-size: 34px;
+  color: #fff;
+  background: var(--color);
+  padding: 15px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+}
