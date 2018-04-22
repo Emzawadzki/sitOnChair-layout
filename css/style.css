@@ -356,34 +356,112 @@ body {
 /* SECTION PRICE-LIST */
 
 .price-list {
-background-color: #eee;
-}
-
-.price-list-row {
-
-}
-
-.col-1-3 {
-
+  background-color: rgba(240, 240, 240, 1);
 }
 
 .price-list-plan {
-  border: 1px solid #ddd;
-  height: 500px;
+  border: 2px solid #ddd;
+  height: 520px;
   background-color: rgba(250, 250, 250, 1);
+  position: relative;
+text-align: center;
+}
+
+.price-list-plan:before {
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  background-color: rgba(250, 250, 250, 1);
+  border: 2px solid #ddd;
+  z-index: 100;
+  transform: translate(calc(322px / 2 - 50%), calc(-50% - 14px));
+}
+
+.price-list-plan:after {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  background-color: #ddd;
+  z-index: 101;
+  transform: translate(calc(322px / 2 - 50%), calc(-50% - 14px));
 }
 
 .price-list-header {
-height: 50%;
+height: 40%;
+border-bottom: 1px solid #fff;
+text-align: center;
+}
+
+.price-list-header h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--color);
+  margin-top: 40px;
+  font-weight: 600;
+
+}
+
+.price-list-price {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(calc(322px / 2 - 50%), 110px);
+  width: 80px;
+  height: 80px;
+}
+
+.price-list-price-value {
+font-size: 50px;
+font-weight: 700;
+position: relative;
+}
+
+.price-list-price-value:after {
+  content:"99";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(58px, 10px);
+  font-size: 14px;
+  font-weight: 700;
+  }
+
+.price-list-price-unit {
+  text-transform: uppercase;
+  line-height: 15px;
 }
 
 .price-list-service-list {
-
+list-style-type: none;
+text-align: center;
 }
 
-.price-list-service-list {
-
+.price-list-service-list-el {
+font-size: 24px;
+height: 44px;
+line-height: 44px;
+background-color: rgba(230, 230, 230, 1);
+color: #999;
 }
+
+.price-list-service-list-el:nth-child(even) {
+  font-size: 24px;
+  height: 46px;
+  line-height: 46px;
+  background-color: rgba(245, 245, 245, 1);
+  }
+
+
 
 
 /* /SECTION PRICE-LIST */
