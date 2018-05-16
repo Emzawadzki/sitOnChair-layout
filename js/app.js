@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+  
   var banners = document.querySelectorAll('.banner-slide');
   var buttonNextSlide = document.querySelector('#btn-next');
   var buttonPrevSlide = document.querySelector('#btn-prev');
   var slideQuantity = 0;
-  var newBanner, newBannerIndex;
-
-  // Add numbers for banners
+  var activeBanner, activeBannerIndex, prevBanner, nextBanner, futureNextBanner, futureNextBannerIndex, futurePrevBanner, futurePrevBannerIndex;
+  
+  // Add banners dataset index
   for (let i = 0; i < banners.length; i++) {
     banners[i].dataset.slideNumber = i;
     slideQuantity++;
@@ -14,44 +15,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Change slide next
   var slideChangeNext = function (e) {
-    // hiding active banner
-    var activeBanner = document.querySelector('.banner-slide-active');
-    activeBanner.classList.remove('banner-slide-active');
-    var activeBannerIndex = activeBanner.dataset.slideNumber;
-
+    // finding active banner
+    activeBanner = document.querySelector('.banner-slide-active');
+    activeBannerIndex = activeBanner.dataset.slideNumber;
     // finding next banner
-    if (Number(activeBannerIndex) === slideQuantity) {
-      newBannerIndex = 0;
+    nextBanner = document.querySelector('.banner-slide-next');
+    nextBannerIndex = nextBanner.dataset.slideNumber;
+    // finding prev banner
+    prevBanner = document.querySelector('.banner-slide-prev');
+    prevBannerIndex = prevBanner.dataset.slideNumber;
+
+    // finding future next banner
+    if (Number(nextBannerIndex) === slideQuantity) {
+      futureNextBannerIndex = 0;
     } else {
-      newBannerIndex = Number(activeBannerIndex) + 1;
+      futureNextBannerIndex = Number(nextBannerIndex) + 1;
     }
+    futureNextBanner = banners[futureNextBannerIndex];
 
-    // showing new banner
-    newBanner = banners[newBannerIndex];
-    newBanner.classList.add('banner-slide-active');
+    // slide
+    prevBanner.classList.remove('banner-slide-prev');
+    activeBanner.classList.add('banner-slide-prev');
+    activeBanner.classList.remove('banner-slide-active');
+    nextBanner.classList.remove('banner-slide-next');
+    nextBanner.classList.add('banner-slide-active');
+    futureNextBanner.classList.add('banner-slide-next');
   }
-
-  buttonNextSlide.addEventListener('click', slideChangeNext);
 
   // Change slide prev
   var slideChangePrev = function (e) {
-    // hiding active banner
-    var activeBanner = document.querySelector('.banner-slide-active');
-    activeBanner.classList.remove('banner-slide-active');
-    var activeBannerIndex = activeBanner.dataset.slideNumber;
-
+    // finding active banner
+    activeBanner = document.querySelector('.banner-slide-active');
+    activeBannerIndex = activeBanner.dataset.slideNumber;
+    // finding next banner
+    nextBanner = document.querySelector('.banner-slide-next');
+    nextBannerIndex = nextBanner.dataset.slideNumber;
     // finding prev banner
-    if (Number(activeBannerIndex) === 0) {
-      newBannerIndex = slideQuantity;
+    prevBanner = document.querySelector('.banner-slide-prev');
+    prevBannerIndex = prevBanner.dataset.slideNumber;
+
+    // finding future prev banner
+    if (Number(prevBannerIndex) === 0) {
+      futurePrevBannerIndex = slideQuantity;
     } else {
-      newBannerIndex = Number(activeBannerIndex) - 1;
+      futurePrevBannerIndex = Number(prevBannerIndex) - 1;
     }
+    futurePrevBanner = banners[futurePrevBannerIndex];
 
-    // showing new banner
-    newBanner = banners[newBannerIndex];
-    newBanner.classList.add('banner-slide-active');
+    // slide
+    nextBanner.classList.remove('banner-slide-next');
+    activeBanner.classList.add('banner-slide-next');
+    activeBanner.classList.remove('banner-slide-active');
+    prevBanner.classList.remove('banner-slide-prev');
+    prevBanner.classList.add('banner-slide-active');
+    futurePrevBanner.classList.add('banner-slide-prev');
+
   }
-
+  
+  buttonNextSlide.addEventListener('click', slideChangeNext);
   buttonPrevSlide.addEventListener('click', slideChangePrev);
-
 })

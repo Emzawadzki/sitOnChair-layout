@@ -46,7 +46,7 @@
                 </ul>
             </nav>
         </div>
-    </header> 
+    </header>
 
     <section class="main-banner">
         <div class="container">
@@ -54,7 +54,7 @@
                 <button class="banner-prev" id="btn-prev">&lt;</button>
                 <button class="banner-next" id="btn-next">&gt;</button>
                 <div class="banner-slides">
-                    <div class="banner-slide banner-slide-active clearfix">
+                    <div class="banner-slide banner-slide-prev clearfix">
                         <div class="banner-slide-01-left">
 
                         </div>
@@ -72,11 +72,11 @@
                             </button>
                         </div>
                     </div>
-                    <div class="banner-slide clearfix" style="background: red;">
-                        
+                    <div class="banner-slide banner-slide-active clearfix" style="background: red;">
+
                     </div>
-                    <div class="banner-slide clearfix" style="background: green;">
-                        
+                    <div class="banner-slide banner-slide-next clearfix" style="background: green;">
+
                     </div>
 
                 </div>
@@ -128,7 +128,9 @@
                             </h3>
                         </div>
                         <div class="price-list-price">
-                            <span class="price-list-price-value">85</span><br><span class="price-list-price-unit">Pln&#47;msc</span>
+                            <span class="price-list-price-value">85</span>
+                            <br>
+                            <span class="price-list-price-unit">Pln&#47;msc</span>
                         </div>
                         <ul class="price-list-service-list">
                             <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
@@ -139,24 +141,26 @@
                 </div>
 
                 <div class="col-1-3">
-                        <article class="price-list-plan">
-                            <div class="price-list-header">
-                                <h3>
-                                    Standard plan
-                                </h3>
-                            </div>
-                            <div class="price-list-price">
-                                <span class="price-list-price-value">95</span><br><span class="price-list-price-unit">Pln&#47;msc</span>
-                            </div>
-                            <ul class="price-list-service-list">
-                                <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
-                                <li class="price-list-service-list-el">Serwis</li>
-                                <li class="price-list-service-list-el">Gwarancja 5 lat</li>
-    
-                            </ul>
-                            <a href="#" class="price-list-join-button">Dołącz</a>
-                        </article>
-                    </div>
+                    <article class="price-list-plan">
+                        <div class="price-list-header">
+                            <h3>
+                                Standard plan
+                            </h3>
+                        </div>
+                        <div class="price-list-price">
+                            <span class="price-list-price-value">95</span>
+                            <br>
+                            <span class="price-list-price-unit">Pln&#47;msc</span>
+                        </div>
+                        <ul class="price-list-service-list">
+                            <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
+                            <li class="price-list-service-list-el">Serwis</li>
+                            <li class="price-list-service-list-el">Gwarancja 5 lat</li>
+
+                        </ul>
+                        <a href="#" class="price-list-join-button">Dołącz</a>
+                    </article>
+                </div>
 
                 <div class="col-1-3">
                     <article class="price-list-plan">
@@ -166,7 +170,9 @@
                             </h3>
                         </div>
                         <div class="price-list-price">
-                            <span class="price-list-price-value">211</span><br><span class="price-list-price-unit">Pln&#47;msc</span>
+                            <span class="price-list-price-value">211</span>
+                            <br>
+                            <span class="price-list-price-unit">Pln&#47;msc</span>
                         </div>
                         <ul class="price-list-service-list">
                             <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
@@ -180,6 +186,44 @@
             </div>
         </div>
     </section>
+
+    <section class="calc">
+        <div class="container">
+            <h2 class="section-title">
+                Skomponuj swoje krzesło
+            </h2>
+            <form class="form">
+                <div class="calc-form-options">
+                    <div class="dropdown-list">
+                        <span class="list-label">Wybierz rodzaj</span>
+                        <span class="list-arrow"></span>
+                        <ul class="list-panel">
+                            <li>Clair</li>
+                            <li>Margarita</li>
+                            <li>Selena</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-list">
+                        <span class="list-label">Wybierz rodzaj</span>
+                        <span class="list-arrow"></span>
+                        <ul class="list-panel">
+                            <li>Clair</li>
+                            <li>Margarita</li>
+                            <li>Selena</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="calc-form-image">
+
+                </div>
+                <div class="calc-form-summary">
+
+                </div>
+            </form>
+
+        </div>
+    </section>
+
 
     <section class="main-contact">
         <div class="container">
@@ -213,6 +257,9 @@
         </div>
 
     </section>
+
+
+
     <footer class="main-footer">
         <div class="container">
             <div class="main-footer-copyright">
@@ -221,20 +268,37 @@
             <div class="main-footer-social">
                 <div class="main-footer-social-icons">
                     <ul>
-                        <li><a href=""><img class="main-footer-social-icon" src="images/flickr.png" alt=""></a></li>
-                        <li><a href=""><img class="main-footer-social-icon" src="images/vimeo.png" alt=""></a></li>
-                        <li><a href=""><img class="main-footer-social-icon" src="images/pinterest.png" alt=""></a></li>
-                        <li><a href=""><img class="main-footer-social-icon" src="images/twitter.png" alt=""></a></li>
+                        <li>
+                            <a href="">
+                                <img class="main-footer-social-icon" src="images/flickr.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img class="main-footer-social-icon" src="images/vimeo.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img class="main-footer-social-icon" src="images/pinterest.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img class="main-footer-social-icon" src="images/twitter.png" alt="">
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="main-footer-logo">
-                    <p>sit <strong>on</strong> chair</p>
+                    <p>sit
+                        <strong>on</strong> chair</p>
                 </div>
             </div>
         </div>
     </footer>
 
-<script src="js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

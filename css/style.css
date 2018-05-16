@@ -214,6 +214,7 @@ body {
   height: 100%;
   margin: 0 100px;
   position: relative;
+  overflow: hidden;
 }
 
 /* SLIDERY */
@@ -224,13 +225,23 @@ body {
   top: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
   transition: 0.5s all;
 }
 
 .banner-slide-active {
-  opacity: 1;
   z-index: 2;
+}
+
+.banner-slide-next {
+  transform: translate(100%, 0);
+  z-index: 0;
+  opacity: 0;
+}
+
+.banner-slide-prev {
+  transform: translate(-100%, 0);
+  z-index: 0;
+  opacity: 0;
 }
 
 .banner-slide-01-left {
@@ -544,6 +555,12 @@ body {
 }
 
 /* /SECTION PRICE-LIST */
+
+/* SECTION CALC */
+
+  
+
+/* /SECTION CALC */
 
 /* MAIN - CONTACT */
 
