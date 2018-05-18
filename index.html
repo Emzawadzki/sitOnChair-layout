@@ -72,11 +72,41 @@
                             </button>
                         </div>
                     </div>
-                    <div class="banner-slide banner-slide-active clearfix" style="background: red;">
+                    <div class="banner-slide banner-slide-active clearfix">
+                        <div class="banner-slide-02-left">
 
+                        </div>
+                        <div class="banner-slide-02-right">
+                            <h2 class="banner-slide-title">Sit
+                                <span>on</span> our
+                                <span>chair</span>
+                            </h2>
+                            <p class="banner-slide-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure beatae iste possimus a placeat officia sint alias labore quibusdam
+                                quam sit, neque, corporis quaerat! Itaque inventore similique provident repellat quaerat.
+                            </p>
+                            <button class="banner-slide-button btn">
+                                <a href="/">Zobacz więcej</a>
+                            </button>
+                        </div>
                     </div>
-                    <div class="banner-slide banner-slide-next clearfix" style="background: green;">
+                    <div class="banner-slide banner-slide-next clearfix">
+                        <div class="banner-slide-03-left">
 
+                        </div>
+                        <div class="banner-slide-03-right">
+                            <h2 class="banner-slide-title">Sit
+                                <span>on</span> our
+                                <span>chair</span>
+                            </h2>
+                            <p class="banner-slide-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure beatae iste possimus a placeat officia sint alias labore quibusdam
+                                quam sit, neque, corporis quaerat! Itaque inventore similique provident repellat quaerat.
+                            </p>
+                            <button class="banner-slide-button btn">
+                                <a href="/">Zobacz więcej</a>
+                            </button>
+                        </div>
                     </div>
 
                 </div>
@@ -189,35 +219,92 @@
 
     <section class="calc">
         <div class="container">
-            <h2 class="section-title">
-                Skomponuj swoje krzesło
-            </h2>
-            <form class="form">
-                <div class="calc-form-options">
-                    <div class="dropdown-list">
-                        <span class="list-label">Wybierz rodzaj</span>
-                        <span class="list-arrow"></span>
-                        <ul class="list-panel">
-                            <li>Clair</li>
-                            <li>Margarita</li>
-                            <li>Selena</li>
-                        </ul>
+            <header class="section-double-header">
+                <h2 class="section-title">
+                    Skomponuj swoje krzesło
+                </h2>
+                <h2 class="section-title title-right">
+                    Podsumowanie
+                </h2>
+            </header>
+            <form class="form clearfix">
+                <div class="col-1-3">
+                    <div class="calc-form-options">
+                        <div class="dropdown-list">
+                            <span class="list-label" id="chairType">Wybierz rodzaj</span>
+                            <span class="list-arrow"></span>
+                            <ul class="list-panel hidden">
+                                <li data-price="200">Clair</li>
+                                <li data-price="220">Margarita</li>
+                                <li data-price="250">Selena</li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-list">
+                            <span class="list-label" id="chairColor">Wybierz kolor</span>
+                            <span class="list-arrow"></span>
+                            <ul class="list-panel hidden">
+                                <li data-price="0">Czerwony</li>
+                                <li data-price="49">Czarny</li>
+                                <li data-price="0">Pomarańczowy</li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-list">
+                            <span class="list-label" id="chairMaterial">Wybierz materiał</span>
+                            <span class="list-arrow"></span>
+                            <ul class="list-panel hidden">
+                                <li data-price="0">Tkanina</li>
+                                <li data-price="140">Skóra</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="dropdown-list">
-                        <span class="list-label">Wybierz rodzaj</span>
-                        <span class="list-arrow"></span>
-                        <ul class="list-panel">
-                            <li>Clair</li>
-                            <li>Margarita</li>
-                            <li>Selena</li>
-                        </ul>
+                    <div class="calc-form-checkbox">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox-input" id="chairTransport" data-price="100">
+                            <span class="checkbox-icon"></span>
+                            Transport
+                        </label>
                     </div>
                 </div>
-                <div class="calc-form-image">
-
+                <div class="col-1-3">
+                    <div class="calc-form-image">
+                        <img src="images/red_chair.png" alt="red chair image">
+                    </div>
                 </div>
-                <div class="calc-form-summary">
+                <div class="col-1-3">
+                    <div class="calc-form-summary">
+                        <div class="calc-form-summary-content">
+                            <div class="calc-form-summary-left">
+                                <span class="calc-form-summary-content-chair">
+                                    Twój fotel
+                                </span>
+                                <ul class="calc-form-summary-content-chair-options">
+                                    <li id="chairColorOutput"></li>
+                                    <li id="chairMaterialOutput"></li>
+                                    <li id="chairTransportOutput"></li>
+                                </ul>
+                            </div>
+                            <div class="calc-form-summary-right">
+                                <span class="calc-form-summary-content-chair-price">
+                                    0
+                                </span>
+                                <ul class="calc-form-summary-content-chair-options-price">
+                                    <li id="chairColorPrice"></li>
+                                    <li id="chairMaterialPrice"></li>
+                                    <li id="chairTransportPrice"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="calc-form-summary-sum">
+                            <span>SUMA</span>
+                            <span class="calc-form-summary-sum-price"></span>
+                        </div>
 
+
+
+                    </div>
+                    <a href="#">
+                        <button type="submit" class="calc-submitButton" id="orderSubmit">Zamawiam</button>
+                    </a>
                 </div>
             </form>
 

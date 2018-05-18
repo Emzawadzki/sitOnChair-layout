@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-  
+
+  // *** SLIDER ***
+
   var banners = document.querySelectorAll('.banner-slide');
   var buttonNextSlide = document.querySelector('#btn-next');
   var buttonPrevSlide = document.querySelector('#btn-prev');
   var slideQuantity = 0;
   var activeBanner, activeBannerIndex, prevBanner, nextBanner, futureNextBanner, futureNextBannerIndex, futurePrevBanner, futurePrevBannerIndex;
-  
+
   // Add banners dataset index
   for (let i = 0; i < banners.length; i++) {
     banners[i].dataset.slideNumber = i;
@@ -71,7 +73,101 @@ document.addEventListener('DOMContentLoaded', function () {
     futurePrevBanner.classList.add('banner-slide-prev');
 
   }
-  
+
   buttonNextSlide.addEventListener('click', slideChangeNext);
   buttonPrevSlide.addEventListener('click', slideChangePrev);
+
+  // *** CALC FORM ***
+
+  // drop down
+  var dropdownLists = document.querySelectorAll('.calc .dropdown-list');
+
+
+  for (var i = 0; i < dropdownLists.length; i++) {
+    dropdownLists[i].addEventListener('click', function () {
+      var list = this.querySelector('ul');
+      list.classList.toggle('hidden');
+    })
+  }
+
+  // dropdown select
+  // chair type
+  var chairTypeSelector = document.querySelector('#chairType');
+  var chairTypeContainer = dropdownLists[0].querySelector('ul');;
+  var chairTypeList = chairTypeContainer.querySelectorAll('li');
+  var chairTypeOutput = document.querySelector('.calc-form-summary-content-chair');
+  var chairTypePriceOutput = document.querySelector('.calc-form-summary-content-chair-price');
+
+  // chair color
+  var chairColorSelector = document.querySelector('#chairColor');
+  var chairColorContainer = dropdownLists[1].querySelector('ul');;
+  var chairColorList = chairColorContainer.querySelectorAll('li');
+  var chairColorOutput = document.querySelector('#chairColorOutput');
+  var chairColorPriceOutput = document.querySelector('#chairColorPrice');
+
+  // chair material
+  var chairMaterialSelector = document.querySelector('#chairMaterial');
+  var chairMaterialContainer = dropdownLists[2].querySelector('ul');;
+  var chairMaterialList = chairMaterialContainer.querySelectorAll('li');
+  var chairMaterialOutput = document.querySelector('#chairMaterialOutput');
+  var chairMaterialPriceOutput = document.querySelector('#chairMaterialPrice');
+
+  //  chair type function
+  for (var i = 0; i < chairTypeList.length; i++) {
+    chairTypeList[i].addEventListener('click', function (e) {
+      chairTypeOutput.innerText = this.innerText;
+      chairTypeSelector.innerText = this.innerText;
+      chairTypePriceOutput.innerText = this.dataset.price;
+      chairTypeSelector.classList.add('list-label-selected');
+      sumOrderPrice();
+    });
+  }
+
+  //  chair color function
+  for (var i = 0; i < chairColorList.length; i++) {
+    chairColorList[i].addEventListener('click', function (e) {
+      chairColorOutput.innerText = this.innerText;
+      chairColorSelector.innerText = this.innerText;
+      chairColorPriceOutput.innerText = this.dataset.price;
+      chairColorSelector.classList.add('list-label-selected');
+      sumOrderPrice();
+    });
+  }
+
+  //  chair material function
+  for (var i = 0; i < chairMaterialList.length; i++) {
+    chairMaterialList[i].addEventListener('click', function (e) {
+      chairMaterialOutput.innerText = this.innerText;
+      chairMaterialSelector.innerText = this.innerText;
+      chairMaterialPriceOutput.innerText = this.dataset.price;
+      chairMaterialSelector.classList.add('list-label-selected');
+      sumOrderPrice();
+    });
+  }
+
+  // chair transport
+  var chairTransportCheckbox = document.querySelector('#chairTransport');
+  var chairTransportOutput = document.querySelector('#chairTransportOutput');
+  var chairTransportPriceOutput = document.querySelector('#chairTransportPrice');
+  
+  chairTransportCheckbox.addEventListener('click', function() {
+    if(chairTransportCheckbox.checked) {
+      chairTransportOutput.innerText = 'transport';
+      chairTransportPriceOutput.innerText = Number(this.dataset.price);
+    } else {
+      chairTransportOutput.innerText = '';
+      chairTransportPriceOutput.innerText = '';
+    }
+    sumOrderPrice();
+  })
+  
+  // sum function
+  var sumOutput = document.querySelector('.calc-form-summary-sum-price');
+  
+  var sumOrderPrice = function() {
+    var sum = Number(chairTypePriceOutput.innerText) + Number(chairColorPriceOutput.innerText) + Number(chairMaterialPriceOutput.innerText) + Number(chairTransportPriceOutput.innerText);
+    sumOutput.innerText = sum + " zł";
+  }
+
+
 })
