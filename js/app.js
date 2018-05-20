@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var banners = document.querySelectorAll('.banner-slide');
   var buttonNextSlide = document.querySelector('#btn-next');
   var buttonPrevSlide = document.querySelector('#btn-prev');
+  
   var slideQuantity = 0;
   var activeBanner, activeBannerIndex, prevBanner, nextBanner, futureNextBanner, futureNextBannerIndex, futurePrevBanner, futurePrevBannerIndex;
 
@@ -79,17 +80,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // *** CALC FORM ***
 
-  // drop down
+  // drop down (active chair type only)
   var dropdownLists = document.querySelectorAll('.calc .dropdown-list');
 
+  var activateDropdown = function() {
+    var list = this.querySelector('ul');
+    list.classList.toggle('hidden');
+  };
 
-  for (var i = 0; i < dropdownLists.length; i++) {
-    dropdownLists[i].addEventListener('click', function () {
-      var list = this.querySelector('ul');
-      list.classList.toggle('hidden');
-    })
-  }
-
+  dropdownLists[0].addEventListener('click', activateDropdown);
+  
   // dropdown select
   // chair type
   var chairTypeSelector = document.querySelector('#chairType');
@@ -120,6 +120,8 @@ document.addEventListener('DOMContentLoaded', function () {
       chairTypePriceOutput.innerText = this.dataset.price;
       chairTypeSelector.classList.add('list-label-selected');
       sumOrderPrice();
+      activateNextOption();
+      submitCheck();
     });
   }
 
@@ -131,6 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
       chairColorPriceOutput.innerText = this.dataset.price;
       chairColorSelector.classList.add('list-label-selected');
       sumOrderPrice();
+      activateNextOption();
+      submitCheck();
     });
   }
 
@@ -142,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
       chairMaterialPriceOutput.innerText = this.dataset.price;
       chairMaterialSelector.classList.add('list-label-selected');
       sumOrderPrice();
+      activateNextOption();
+      submitCheck();
     });
   }
 
@@ -150,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var chairTransportOutput = document.querySelector('#chairTransportOutput');
   var chairTransportPriceOutput = document.querySelector('#chairTransportPrice');
   
-  chairTransportCheckbox.addEventListener('click', function() {
+  var activateTransportCheckbox = function(e) {
     if(chairTransportCheckbox.checked) {
       chairTransportOutput.innerText = 'transport';
       chairTransportPriceOutput.innerText = Number(this.dataset.price);
@@ -159,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
       chairTransportPriceOutput.innerText = '';
     }
     sumOrderPrice();
-  })
+  }
   
   // sum function
   var sumOutput = document.querySelector('.calc-form-summary-sum-price');
@@ -169,5 +175,43 @@ document.addEventListener('DOMContentLoaded', function () {
     sumOutput.innerText = sum + " zł";
   }
 
+  // activating further dropdown options
+  var activateNextOption = function() {
+    for(var i = 0; i < dropdownLists.length; i++) {
+      if(dropdownLists[i+1] === undefined) {
+        return;
+      } else if(dropdownLists[i].innerText.indexOf('Wybierz') === -1) {
+        dropdownLists[i+1].classList.remove('inactive');
+        dropdownLists[i+1].addEventListener('click', activateDropdown);
+      }
+    }
+  }
+
+  // submit button and transport activating
+  var buttonSubmit = document.querySelector('#orderSubmit');
+  var checkboxIcon = document.querySelector('.calc .checkbox-icon');
+
+  var submitCheck = function() {
+    var checkedOptions = 0
+    for(var i = 0; i < dropdownLists.length; i++) {
+      if(dropdownLists[i].innerText.indexOf('Wybierz') === -1) {
+        checkedOptions++;
+      }
+    }
+    if(checkedOptions === dropdownLists.length) {
+      buttonSubmit.classList.add('btnActive');
+      chairTransportCheckbox.addEventListener('click', activateTransportCheckbox);
+      chairTransportCheckbox.disabled = false;
+      checkboxIcon.classList.add('checkboxActive');
+    }
+  }
+
+  // prevent sending form / transport activation if not completed
+
+  buttonSubmit.addEventListener('click', function(e) {
+    if(!buttonSubmit.classList.contains('btnActive')){
+      e.preventDefault();
+    }
+  });
 
 })
