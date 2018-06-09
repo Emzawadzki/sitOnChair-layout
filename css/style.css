@@ -203,6 +203,7 @@ body {
   background: none;
   font-size: 60px;
   color: var(--color);
+  cursor: pointer;
 }
 
 .banner-prev:focus,
@@ -256,10 +257,13 @@ body {
   width: 40%;
   height: 100%;
   float: left;
-  background-image: url(../images/black_chair.png);
-  background-position: center bottom;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: 125%;
+  background-size: contain;
+}
+
+.banner-slide-01-left {
+  background-image: url(../images/black_chair.png);
 }
 
 .banner-slide-02-left {

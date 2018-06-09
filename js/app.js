@@ -16,17 +16,34 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   slideQuantity--;
 
+  // Function - finding active banner
+  var findActiveBanner = function() {
+    activeBanner = document.querySelector('.banner-slide-active');
+    activeBannerIndex = activeBanner.dataset.slideNumber;
+  }
+
+  // Function - finding next banner
+  var findNextBanner = function() {
+    nextBanner = document.querySelector('.banner-slide-next');
+    nextBannerIndex = nextBanner.dataset.slideNumber;
+  }
+
+  // Function - finding prev banner
+  var findPrevBanner = function() {
+    prevBanner = document.querySelector('.banner-slide-prev');
+    prevBannerIndex = prevBanner.dataset.slideNumber;
+  }
+
+
+
   // Change slide next
   var slideChangeNext = function (e) {
     // finding active banner
-    activeBanner = document.querySelector('.banner-slide-active');
-    activeBannerIndex = activeBanner.dataset.slideNumber;
+    findActiveBanner();
     // finding next banner
-    nextBanner = document.querySelector('.banner-slide-next');
-    nextBannerIndex = nextBanner.dataset.slideNumber;
+    findNextBanner();
     // finding prev banner
-    prevBanner = document.querySelector('.banner-slide-prev');
-    prevBannerIndex = prevBanner.dataset.slideNumber;
+    findPrevBanner();
 
     // finding future next banner
     if (Number(nextBannerIndex) === slideQuantity) {
@@ -48,14 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Change slide prev
   var slideChangePrev = function (e) {
     // finding active banner
-    activeBanner = document.querySelector('.banner-slide-active');
-    activeBannerIndex = activeBanner.dataset.slideNumber;
+    findActiveBanner();
     // finding next banner
-    nextBanner = document.querySelector('.banner-slide-next');
-    nextBannerIndex = nextBanner.dataset.slideNumber;
+    findNextBanner();
     // finding prev banner
-    prevBanner = document.querySelector('.banner-slide-prev');
-    prevBannerIndex = prevBanner.dataset.slideNumber;
+    findPrevBanner();
 
     // finding future prev banner
     if (Number(prevBannerIndex) === 0) {
@@ -213,5 +227,9 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
     }
   });
+
+  // *** CONTACT FORM ***
+
+  //TODO: walidacja formularza
 
 })
