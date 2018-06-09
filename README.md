@@ -7,8 +7,8 @@
 ## Features
 > * Slider (VanillaJS)
 > * Price calculator form (VanillaJS)
->  * progressive inputs activation
->  * live price generating
+>     * progressive inputs activation
+>     * live price generating
 
 ## Upcoming features
 > * Contact form validation (VanillaJS)
