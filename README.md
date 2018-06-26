@@ -11,6 +11,7 @@
 >     * live price generating
 
 ## Upcoming features
+> * Mobile media breakpoints
 > * Contact form validation (VanillaJS)
 
 ## Notes
