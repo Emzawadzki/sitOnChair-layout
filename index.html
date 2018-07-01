@@ -22,8 +22,9 @@
                     Sit
                     <span>on</span> chair</a>
             </h1>
+            
             <nav class="page-nav">
-                <ul class="page-nav-lis">
+                <ul class="page-nav-list">
                     <li class="page-nav-list-el">
                         <a href="/" class="page-nav-list-link">O firmie</a>
                         <ul class="page-nav-sublist">
@@ -45,6 +46,7 @@
                         <a href="/" class="page-nav-list-link">Kontakt</a>
                     </li>
                 </ul>
+                <button class="page-navigation-toggle" id="nav-toggle"></button>
             </nav>
         </div>
     </header>
@@ -56,10 +58,10 @@
                 <button class="banner-next" id="btn-next">&gt;</button>
                 <div class="banner-slides">
                     <div class="banner-slide banner-slide-prev clearfix">
-                        <div class="banner-slide-01-left">
+                        <div class="banner-slide-01-img">
 
                         </div>
-                        <div class="banner-slide-01-right">
+                        <div class="banner-slide-01-content">
                             <h2 class="banner-slide-title">Sit
                                 <span>on</span> our
                                 <span>chair</span>
@@ -74,10 +76,10 @@
                         </div>
                     </div>
                     <div class="banner-slide banner-slide-active clearfix">
-                        <div class="banner-slide-02-left">
+                        <div class="banner-slide-02-img">
 
                         </div>
-                        <div class="banner-slide-02-right">
+                        <div class="banner-slide-02-content">
                             <h2 class="banner-slide-title">Sit
                                 <span>on</span> our
                                 <span>chair</span>
@@ -92,10 +94,10 @@
                         </div>
                     </div>
                     <div class="banner-slide banner-slide-next clearfix">
-                        <div class="banner-slide-03-left">
+                        <div class="banner-slide-03-img">
 
                         </div>
-                        <div class="banner-slide-03-right">
+                        <div class="banner-slide-03-content">
                             <h2 class="banner-slide-title">Sit
                                 <span>on</span> our
                                 <span>chair</span>
@@ -148,70 +150,84 @@
 
     <section class="price-list">
         <div class="container">
-            <h2 class="section-title">Cennik</h2>
+            <header class="section-header">
+                <h2 class="section-title">Cennik</h2>
+            </header>
             <div class="price-list-row clearfix">
 
                 <div class="col-1-3">
                     <article class="price-list-plan">
                         <div class="price-list-header">
-                            <h3>
+                            <h3 class="price-list-title">
                                 Basic plan
                             </h3>
                         </div>
-                        <div class="price-list-price">
-                            <span class="price-list-price-value">85</span>
-                            <br>
-                            <span class="price-list-price-unit">Pln&#47;msc</span>
+                        <div class="price-list-price-cont">
+                            <div class="price-list-price">
+                                <span class="price-list-price-value">85</span>
+                                <br>
+                                <span class="price-list-price-unit">Pln&#47;msc</span>
+                            </div>
                         </div>
-                        <ul class="price-list-service-list">
-                            <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
-                            <li class="price-list-service-list-el">Serwis</li>
-                        </ul>
-                        <a href="#" class="price-list-join-button">Dołącz</a>
+                        <div class="price-list-service-cont">
+                            <ul class="price-list-service-list">
+                                <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
+                                <li class="price-list-service-list-el">Serwis</li>
+                            </ul>
+                            <a href="#" class="price-list-join-button">Dołącz</a>
+                        </div>
                     </article>
                 </div>
 
                 <div class="col-1-3">
                     <article class="price-list-plan">
                         <div class="price-list-header">
-                            <h3>
+                            <h3 class="price-list-title">
                                 Standard plan
                             </h3>
                         </div>
-                        <div class="price-list-price">
-                            <span class="price-list-price-value">95</span>
-                            <br>
-                            <span class="price-list-price-unit">Pln&#47;msc</span>
+                        <div class="price-list-price-cont">
+                            <div class="price-list-price">
+                                <span class="price-list-price-value">95</span>
+                                <br>
+                                <span class="price-list-price-unit">Pln&#47;msc</span>
+                            </div>
                         </div>
-                        <ul class="price-list-service-list">
-                            <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
-                            <li class="price-list-service-list-el">Serwis</li>
-                            <li class="price-list-service-list-el">Gwarancja 5 lat</li>
-
-                        </ul>
-                        <a href="#" class="price-list-join-button">Dołącz</a>
+                        <div class="price-list-service-cont">
+                            <ul class="price-list-service-list">
+                                <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
+                                <li class="price-list-service-list-el">Serwis</li>
+                                <li class="price-list-service-list-el">Gwarancja 5 lat</li>
+    
+                            </ul>
+                            <a href="#" class="price-list-join-button">Dołącz</a>
+                        </div>
                     </article>
                 </div>
 
                 <div class="col-1-3">
                     <article class="price-list-plan">
                         <div class="price-list-header">
-                            <h3>
+                            <h3 class="price-list-title">
                                 Advance plan
                             </h3>
                         </div>
-                        <div class="price-list-price threeDigit">
-                            <span class="price-list-price-value">211</span>
-                            <br>
-                            <span class="price-list-price-unit">Pln&#47;msc</span>
+                        <div class="price-list-price-cont">
+                            <div class="price-list-price threeDigit">
+                                <span class="price-list-price-value">211</span>
+                                <br>
+                                <span class="price-list-price-unit">Pln&#47;msc</span>
+                            </div>
                         </div>
-                        <ul class="price-list-service-list">
-                            <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
-                            <li class="price-list-service-list-el">Serwis</li>
-                            <li class="price-list-service-list-el">Gwarancja 6 lat</li>
-                            <li class="price-list-service-list-el">Porady projektanta</li>
-                        </ul>
-                        <a href="#" class="price-list-join-button">Dołącz</a>
+                        <div class="price-list-service-cont">
+                            <ul class="price-list-service-list">
+                                <li class="price-list-service-list-el">Zakup towaru + dowóz</li>
+                                <li class="price-list-service-list-el">Serwis</li>
+                                <li class="price-list-service-list-el">Gwarancja 6 lat</li>
+                                <li class="price-list-service-list-el">Porady projektanta</li>
+                            </ul>
+                            <a href="#" class="price-list-join-button">Dołącz</a>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -221,38 +237,38 @@
     <section class="calc">
         <div class="container">
             <header class="section-double-header">
-                <h2 class="section-title">
+                <h2 class="section-title section-double-title">
                     Skomponuj swoje krzesło
                 </h2>
-                <h2 class="section-title title-right">
+                <h2 class="section-title section-double-title section-double-title-right">
                     Podsumowanie
                 </h2>
             </header>
-            <form class="form clearfix">
+            <form class="calc-form clearfix">
                 <div class="col-1-3">
                     <div class="calc-form-options">
-                        <div class="dropdown-list calc-form-chairType">
-                            <span class="list-label" id="chairType">Wybierz rodzaj</span>
-                            <span class="list-arrow"></span>
-                            <ul class="list-panel hidden">
+                        <div class="calc-form-dropdown-list calc-form-chairType">
+                            <span class="calc-form-dropdown-list-label" id="chairType">Wybierz rodzaj</span>
+                            <span class="calc-form-dropdown-list-arrow"></span>
+                            <ul class="calc-form-dropdown-list-panel hidden">
                                 <li data-price="200">Clair</li>
                                 <li data-price="220">Margarita</li>
                                 <li data-price="250">Selena</li>
                             </ul>
                         </div>
-                        <div class="dropdown-list calc-form-chairColor inactive">
-                            <span class="list-label" id="chairColor">Wybierz kolor</span>
-                            <span class="list-arrow"></span>
-                            <ul class="list-panel hidden">
+                        <div class="calc-form-dropdown-list calc-form-chairColor inactive">
+                            <span class="calc-form-dropdown-list-label" id="chairColor">Wybierz kolor</span>
+                            <span class="calc-form-dropdown-list-arrow"></span>
+                            <ul class="calc-form-dropdown-list-panel hidden">
                                 <li data-price="0">Czerwony</li>
                                 <li data-price="49">Czarny</li>
                                 <li data-price="0">Pomarańczowy</li>
                             </ul>
                         </div>
-                        <div class="dropdown-list calc-form-chairMaterial inactive">
-                            <span class="list-label" id="chairMaterial">Wybierz materiał</span>
-                            <span class="list-arrow"></span>
-                            <ul class="list-panel hidden">
+                        <div class="calc-form-dropdown-list calc-form-chairMaterial inactive">
+                            <span class="calc-form-dropdown-list-label" id="chairMaterial">Wybierz materiał</span>
+                            <span class="calc-form-dropdown-list-arrow"></span>
+                            <ul class="calc-form-dropdown-list-panel hidden">
                                 <li data-price="0">Tkanina</li>
                                 <li data-price="140">Skóra</li>
                             </ul>
@@ -272,6 +288,9 @@
                     </div>
                 </div>
                 <div class="col-1-3">
+                    <h2 class="section-title section-mobile-title">
+                        Podsumowanie
+                    </h2>
                     <div class="calc-form-summary">
                         <div class="calc-form-summary-content">
                             <div class="calc-form-summary-left">
@@ -316,30 +335,30 @@
     <section class="main-contact">
         <div class="container">
             <h2 class="section-title">Kontakt</h2>
-            <form class="form clearfix">
-                <div class="form-left">
-                    <div class="form-row">
+            <form class="contact-form clearfix">
+                <div class="contact-form-left">
+                    <div class="contact-form-row">
                         <label for="name" class="visuallyhidden">Imię</label>
                         <input type="text" placeholder="Imię" id="name" name="name">
                     </div>
-                    <div class="form-row">
+                    <div class="contact-form-row">
                         <label for="email" class="visuallyhidden">Email</label>
                         <input type="email" placeholder="Email" id="email" name="email">
                     </div>
-                    <div class="form-row">
+                    <div class="contact-form-row">
                         <label for="message" name="message" class="visuallyhidden">Wiadomość</label>
                         <textarea placeholder="Wiadomość" id="message"></textarea>
                     </div>
                 </div>
-                <div class="form-right">
-                    <div class="form-addon">
+                <div class="contact-form-right">
+                    <div class="contact-form-addon">
                     </div>
                     <label class="checkbox">
                         <input type="checkbox" class="checkbox-input">
                         <span class="checkbox-icon"></span>
                         Zgadzam się na przetwarzanie danych osobowych
                     </label>
-                    <button type="submit" class="btn form-btn">Wyślij</button>
+                    <button type="submit" class="btn contact-form-btn">Wyślij</button>
                 </div>
             </form>
         </div>
@@ -351,7 +370,7 @@
     <footer class="main-footer">
         <div class="container">
             <div class="main-footer-copyright">
-                <p>Copyright 2014 | All Rights Reserved. - Sit On Chair</p>
+                <p>Copyright 2018 | All Rights Reserved. - Sit On Chair</p>
             </div>
             <div class="main-footer-social">
                 <div class="main-footer-social-icons">

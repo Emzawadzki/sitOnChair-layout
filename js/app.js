@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // *** CALC FORM ***
 
   // drop down (active chair type only)
-  var dropdownLists = document.querySelectorAll('.calc .dropdown-list');
+  var dropdownLists = document.querySelectorAll('.calc-form-dropdown-list');
 
   var activateDropdown = function() {
     var list = this.querySelector('ul');
