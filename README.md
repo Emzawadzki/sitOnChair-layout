@@ -9,9 +9,10 @@
 > * Price calculator form (VanillaJS)
 >     * progressive inputs activation
 >     * live price generating
+> * Basic Adaptive Design
 
 ## Upcoming features
-> * Mobile media breakpoints
+> * Improved Adaptive Design
 > * Contact form validation (VanillaJS)
 
 ## Notes
