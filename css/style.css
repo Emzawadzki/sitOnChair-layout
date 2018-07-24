@@ -148,7 +148,7 @@ body {
 .page-header {
   height: 40px;
   background: #000;
-  z-index: 100;
+  z-index: 99999;
   position: relative;
 }
 
@@ -174,15 +174,41 @@ body {
   color: var(--color);
 }
 
-.page-navigation-toggle {
+.page-nav-toggle-btn {
   display: none;
+  border: none;
+  position: relative;
+  background: none;
+}
+
+[class^="page-nav-toggle-btn-hamburger"] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35px;
+  height: 5px;
+  background: var(--color);
+  border-radius: 2px;
+}
+
+.page-nav-toggle-btn-hamburger-1 {
+  transform: translate(-50%, -300%);
+}
+
+.page-nav-toggle-btn-hamburger-2 {
+  transform: translate(-50%, -50%);
+}
+
+.page-nav-toggle-btn-hamburger-3 {
+  transform: translate(-50%, 200%);
 }
 
 @media screen and (max-width: 850px) {
-  .page-navigation-toggle {
+  .page-nav-toggle-btn {
     display: block;
     height: 40px;
     width: 40px;
+    margin-right: 30px;
   }
 }
 
@@ -199,14 +225,17 @@ body {
   .page-nav-list {
     position: absolute;
     top: 100%;
-    right: 0;
-    z-index: 1000;
+    right: 30px;
   }
 
   .page-nav-list-el {
     display: block;
     background: hsla(0, 0%, 0%, 0.6);
     border: 1px solid black;
+  }
+
+  .page-nav-list-hidden {
+    display: none;
   }
 }
 
@@ -235,6 +264,7 @@ body {
   left: 50%;
   transform: translate(-50%, 0);
   padding: 15px;
+  z-index: 999;
 }
 
 .page-nav-list-el:hover .page-nav-sublist {
@@ -274,6 +304,30 @@ body {
 
 .page-nav-sublist-link:hover {
   color: var(--color);
+}
+
+@media screen and (max-width: 850px) {
+  .page-nav-sublist {
+    top: 0;
+    left: 0;
+    transform: translate(calc(-100% - 10px), 0);
+  }
+
+  .page-nav-sublist:before {
+    left: initial;
+    right: 0;
+    top: 20px;
+    transform: translate(50%, -50%) rotate(45deg);
+  }
+
+  .page-nav-sublist:after {
+    top: 0;
+    bottom: 0;
+    left: initial;
+    right: -10px;
+    width: 10px;
+    height: auto;
+  }
 }
 
 /* HEADER */
@@ -1155,11 +1209,12 @@ body {
   font-weight: bold;
 }
 
+@media screen and (max-width: 850px) {
+  .main-footer .container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 /* /MAIN FOOTER */
-
-/* MEDIA */
-
-
-
-/* /MEDIA */

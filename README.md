@@ -1,6 +1,8 @@
 # Sit on Chair
 > Workshop based on Coderslab provided layout with additional functionalities
 
+**[LIVE PREVIEW](https://emzawadzki.github.io/sitOnChair-layout/)**
+
 ## Used technologies
 > <img alt="HTML" src="https://image.freepik.com/free-icon/html-file-with-code-symbol_318-45756.jpg" width="100"/><img alt="CSS" src="https://image.freepik.com/free-icon/css-file-format-symbol_318-45329.jpg" width="100"/><img alt="JS" src="https://image.freepik.com/free-icon/js-file-format-symbol_318-45823.jpg" width="100"/>
 
@@ -9,10 +11,9 @@
 > * Price calculator form (VanillaJS)
 >     * progressive inputs activation
 >     * live price generating
-> * Basic Adaptive Design
+> * Adaptive Design (mobile hamburger menu)
 
 ## Upcoming features
-> * Improved Adaptive Design
 > * Contact form validation (VanillaJS)
 
 ## Notes

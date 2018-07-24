@@ -230,6 +230,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // *** CONTACT FORM ***
 
+  // *** MOBILE MENU TOGGLE ***
+
+  var navList = document.getElementById('nav-list');
+  document.getElementById('nav-toggle').addEventListener('click', function(e) {
+    if(navList.classList.contains('page-nav-list-hidden')) {
+      navList.classList.remove('page-nav-list-hidden');
+      return false;
+    }
+    navList.classList.add('page-nav-list-hidden');
+    return false;
+  })
+
   //TODO: walidacja formularza
 
 })
